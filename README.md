@@ -1,55 +1,50 @@
-# gatsby-starter-deck
+# gatsby-starter-typescript-plus
 
-[![dependencies](https://img.shields.io/david/fabe/gatsby-starter-deck.svg)](./package.json)
-[![deploys by netlify](https://img.shields.io/badge/deploys%20by-netlify-00c7b7.svg)](https://www.netlify.com)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+> A starter kit for TypeScript-based Gatsby projects with sensible defaults.
 
-Create presentations using Gatsby, React & Markdown. Inspired by Guillermo Rauch’s [deck on Next.js](https://deck.now.sh/) and [mdx-deck](https://github.com/jxnblk/mdx-deck).
+This is a starter kit for [Gatsby.js](https://www.gatsbyjs.org/) websites written in TypeScript. It includes the bare essentials for you to get started (styling, Markdown parsing, minimal toolset).
 
-➡️ **[See a live example](//gatsby-deck.netlify.com)**
+## Features
 
-## Installation
+- TypeScript
+- TSLint (with custom TSLint rules)
+- Markdown rendering with Remark
+- Basic component structure
+- Styling with [emotion](https://emotion.sh/)
 
-### With [`gatsby-cli`](https://www.npmjs.com/package/gatsby-cli)
+## Geting started
 
-```bash
-$ gatsby new my-slides https://github.com/fabe/gatsby-starter-deck
-```
-
-### With `git clone`
+Install this starter (assuming you have `gatsby-cli` installed) by running the following command:
 
 ```bash
-$ git clone my-slides git@github.com:fabe/gatsby-starter-deck.git
-$ cd my-slides
-$ yarn
+gatsby new project-name https://github.com/resir014/gatsby-starter-typescript-plus
 ```
 
-## Usage
+## Developing
 
-Edit and extend your slides inside the `src/slides.md` file. Navigate with the arrow keys.
+A nodejs >= 6.0.0 setup with [yarn](https://yarnpkg.com/) is recommended.
 
 ```bash
-# To develop & write
-$ yarn develop
+# install dependencies
+yarn
 
-# To build
-$ yarn build
+# ...or, for npm
+npm install
+
+# serve with hot reload at localhost:8000
+npm start
+
+# build for production
+npm run build
+
+# build for production and push to gh-pages branch
+npm run deploy
 ```
 
-## Writing
+## Credits
 
-###### [src/slides.md](src/slides.md)
+Built with [Gatsby](https://www.gatsbyjs.org/) - the blazing-fast static site generator for [React](https://facebook.github.io/react/).
 
-```md
-# This is the first slide
+## Deploy
 
----
-
-## This is the second slide
-
-![Monkey](//i.imgur.com/PnbINJ6.gif)
-```
-
-## Author
-
-- Fabian Schultz ([@fschultz\_](https://twitter.com/fschultz_))
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/resir014/gatsby-starter-typescript-plus)
