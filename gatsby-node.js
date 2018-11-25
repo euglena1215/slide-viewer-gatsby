@@ -1,6 +1,15 @@
 'use strict'
+const axios = require('axios')
 
 const path = require('path')
+
+async function getAllSlideData() {
+  const { data: slides } = await axios.get(
+    `https://script.google.com/macros/s/AKfycbzzea8w5fE91z2yNCoNyoKd2F-c2hReVzb_gGrXEYH9lSL8LAqi/exec`
+  )
+
+  return slides
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -40,6 +49,22 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+
+  const allSlide = await getAllSlideData()
+  console.log(allSlide)
+  createPage({
+    path: `/slides/`,
+    component: require.resolve('./src/templates/topSlide.tsx'),
+    context: { allSlide }
+  })
+
+  allSlide.forEach(slide => {
+    createPage({
+      path: `/slides/${slide.fileId}/`,
+      component: require.resolve('./src/templates/slide.tsx'),
+      context: { slide }
+    })
+  })
 
   const allMarkdown = await graphql(`
     {

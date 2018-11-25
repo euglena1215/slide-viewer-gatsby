@@ -24,6 +24,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.7.1",
     "classnames": "^2.2.6",
     "emotion": "^9.2.9",
