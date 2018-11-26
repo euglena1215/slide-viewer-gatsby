@@ -36,7 +36,7 @@ export default class PdfViewer extends React.Component<Prop, State> {
 
     return (
       <Wrapper>
-        <PDF file={pdfUrl} onDocumentComplete={this.onDocumentComplete} page={this.state.page} />
+        <PDF file={pdfUrl} onDocumentComplete={this.onDocumentComplete} page={this.state.page} cMapUrl="/cmaps/" />
         <PreviousButton onClick={this.handlePrevious} />
         <NextButton onClick={this.handleNext} />
       </Wrapper>

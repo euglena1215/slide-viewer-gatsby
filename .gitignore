@@ -3,7 +3,9 @@
 # =========================
 
 # Build directory
-public/
+public/*
+!cmaps/
+
 
 # Gatsby cache
 .cache/
