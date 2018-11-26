@@ -34,7 +34,6 @@
     "gatsby-plugin-canonical-urls": "^2.0.5",
     "gatsby-plugin-emotion": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
-    "gatsby-plugin-sharp": "^2.0.5",
     "gatsby-plugin-typescript": "^2.0.0",
     "gatsby-remark-copy-linked-files": "^2.0.5",
     "gatsby-remark-images": "^2.0.1",
@@ -44,7 +43,6 @@
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-json": "^2.1.1",
     "gatsby-transformer-remark": "^2.1.3",
-    "gatsby-transformer-sharp": "^2.1.1",
     "modern-normalize": "^0.5.0",
     "normalize.css": "^8.0.0",
     "polished": "^2.0.3",
@@ -54,6 +52,7 @@
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.9",
     "react-helmet": "^5.2.0",
+    "react-pdf-js": "https://github.com/euglena1215/react-pdf-js",
     "typescript": "^3.0.3"
   },
   "devDependencies": {

@@ -16,13 +16,14 @@ const StyledHeader = styled.header`
 const HeaderInner = styled(Container)`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   height: 100%;
 `
 
 const HomepageLink = styled(Link)`
-  color: ${colors.white};
-  font-size: 1.5rem;
+  color: ${colors.text};
+  font-size: 2rem;
   font-weight: 600;
 
   &:hover,

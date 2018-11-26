@@ -4,6 +4,8 @@ import { getEmSize } from './mixins'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
+  @import url('https://fonts.googleapis.com/css?family=Dosis');
+
   html {
     box-sizing: border-box;
   }
@@ -23,7 +25,8 @@ injectGlobal`
     width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: ${fonts.sansSerif};
+    font-family: ${fonts.Dosis};
+    letter-spacing: 2px;
     color: ${colors.black};
     background-color: ${colors.white};
     -webkit-text-size-adjust: 100%;

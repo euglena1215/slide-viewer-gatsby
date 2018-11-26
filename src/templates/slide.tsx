@@ -2,6 +2,7 @@ import React from 'react'
 import IndexLayout from '../layouts'
 import Page from '../components/Page'
 import Container from '../components/Container'
+import PdfViewer from '../components/PdfViewer'
 
 export default (context: any) => {
   const { pageContext } = context
@@ -9,7 +10,9 @@ export default (context: any) => {
   return (
     <IndexLayout>
       <Page>
-        <Container>{JSON.stringify(slide)}</Container>
+        <Container>
+          <PdfViewer pdfUrl={slide.pdfUrl} aspectRatio={slide.aspectRatio} />
+        </Container>
       </Page>
     </IndexLayout>
   )

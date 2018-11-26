@@ -2,7 +2,7 @@ import React from 'react'
 import IndexLayout from '../layouts'
 import Page from '../components/Page'
 import Container from '../components/Container'
-import { Link } from 'gatsby'
+import { SlideItem } from '../components/SlideItem'
 
 export default (context: any) => {
   const { pageContext } = context
@@ -11,13 +11,9 @@ export default (context: any) => {
     <IndexLayout>
       <Page>
         <Container>
-          {allSlide.map(slide => {
-            return (
-              <Link to={`/${slide.fileId}/`} key={slide.fileId}>
-                <img src={slide.imgUrl} alt="" width={200} />
-              </Link>
-            )
-          })}
+          {allSlide.map(slide => (
+            <SlideItem slide={slide} key={slide.fileId} />
+          ))}
         </Container>
       </Page>
     </IndexLayout>

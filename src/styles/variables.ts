@@ -1,7 +1,7 @@
 /* tslint:disable:max-line-length */
 
 export const colors = {
-  brand: '#663399',
+  brand: '#fff3eb',
   lilac: '#9d7cbf',
   accent: '#ffb238',
   success: '#37b635',
@@ -12,6 +12,7 @@ export const colors = {
     whisper: '#fbfafc'
   },
   code: '#fcf6f0',
+  text: '#676d6e',
   gray: {
     dark: 'hsla(270, 17.119554496%, 0%, 0.92)',
     copy: 'hsla(270, 15.797828016000002%, 0%, 0.88)',
@@ -22,6 +23,7 @@ export const colors = {
 }
 
 export const fonts = {
+  Dosis: 'Dosis,sans-serif',
   sansSerif:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
   serif: 'Georgia, "Times New Roman", Times, serif',
@@ -61,5 +63,5 @@ export const dimensions = {
 }
 
 export const heights = {
-  header: 60
+  header: 120
 }
