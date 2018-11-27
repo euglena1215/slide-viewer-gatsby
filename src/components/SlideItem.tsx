@@ -18,26 +18,30 @@ export interface Slide {
 
 interface Props {
   slide: Slide
+  isShowDetails?: boolean
 }
 
 export const SlideItem = (props: Props) => {
-  const { slide } = props
+  const { slide, isShowDetails } = props
+
   return (
     <Wrapper>
       <Link to={`/${slide.fileId}/`}>
         <SlideImg src={slide.imgUrl} alt="" width={220} />
       </Link>
-      <Details>
-        <IconBox>
-          <Link to={`/${slide.uploadUser.userId}/`}>
-            <UserImg src={slide.uploadUser.imgUrl} />
-          </Link>
-        </IconBox>
-        <DetailsText>
-          <UserName>{slide.uploadUser.name}</UserName>
-          <Published>{slide.timestamp.match(/\d{4}-\d{2}-\d{2}/)}</Published>
-        </DetailsText>
-      </Details>
+      {isShowDetails === undefined || isShowDetails === true ? (
+        <Details>
+          <IconBox>
+            <Link to={`/${slide.uploadUser.userId}/`}>
+              <UserImg src={slide.uploadUser.imgUrl} />
+            </Link>
+          </IconBox>
+          <DetailsText>
+            <UserName>{slide.uploadUser.name}</UserName>
+            <Published>{slide.timestamp.match(/\d{4}-\d{2}-\d{2}/)}</Published>
+          </DetailsText>
+        </Details>
+      ) : null}
     </Wrapper>
   )
 }
