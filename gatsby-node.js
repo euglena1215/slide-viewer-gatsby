@@ -51,20 +51,23 @@ exports.onPreBootstrap = async () => {
   })
 }
 
-const toSelfHostedSlides = allSlide => {
-  return allSlide.map(slide => {
-    slide.pdfUrl = `/assets/${slide.fileId}.pdf`
-    slide.imgUrl = `/assets/${slide.fileId}.png`
-    slide.uploadUser.imgUrl = `/assets/${slide.uploadUser.userId}.png`
-    return slide
-  })
+const toSelfHostedSlide = slide => {
+  slide.pdfUrl = `/assets/${slide.fileId}.pdf`
+  slide.imgUrl = `/assets/${slide.fileId}.png`
+  slide.uploadUser.imgUrl = `/assets/${slide.uploadUser.userId}.png`
+  return slide
+}
+
+const castTimestampToDate = slide => {
+  slide.timestamp = new Date(slide.timestamp * 1000)
+  return slide
 }
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   let allSlide = await getAllSlideData()
-  allSlide = toSelfHostedSlides(allSlide)
+  allSlide = allSlide.map(toSelfHostedSlide).map(castTimestampToDate)
 
   createPage({
     path: `/`,

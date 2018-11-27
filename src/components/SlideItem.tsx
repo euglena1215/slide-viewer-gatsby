@@ -12,7 +12,7 @@ interface Slide {
     imgUrl: string
   }
   aspectRatio: number
-  timestamp: number
+  timestamp: string
 }
 
 interface Props {
@@ -32,7 +32,7 @@ export const SlideItem = (props: Props) => {
         </Link>
         <DetailsText>
           <UserName>{slide.uploadUser.name}</UserName>
-          <Published>XXXX/MM/DD</Published>
+          <Published>{slide.timestamp.match(/\d{4}-\d{2}-\d{2}/)}</Published>
         </DetailsText>
       </Details>
     </Wrapper>
