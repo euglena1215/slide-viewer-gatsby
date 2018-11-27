@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'react-emotion'
 
-interface Slide {
+export interface Slide {
   fileId: string
   pdfUrl: string
   imgUrl: string
@@ -13,6 +13,7 @@ interface Slide {
   }
   aspectRatio: number
   timestamp: string
+  keywords: string
 }
 
 interface Props {

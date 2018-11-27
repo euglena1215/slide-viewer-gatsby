@@ -83,6 +83,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  // User page
   Array.from(new Set(allSlide.map(slide => slide.uploadUser))).forEach(user => {
     const slides = allSlide.filter(slide => slide.uploadUser.userId === user.userId)
     createPage({
