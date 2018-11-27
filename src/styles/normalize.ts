@@ -4,7 +4,8 @@ import { getEmSize } from './mixins'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Dosis');
+  @import url('https://fonts.googleapis.com/css?family=Dosis|M+PLUS+Rounded+1c');
+
 
   html {
     box-sizing: border-box;

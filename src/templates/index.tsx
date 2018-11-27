@@ -4,6 +4,8 @@ import Page from '../components/Page'
 import Container from '../components/Container'
 import { SlideItem, Slide } from '../components/SlideItem'
 import styled from 'react-emotion'
+import { Input } from 'antd'
+import { colors } from '../styles/variables'
 
 interface Prop {
   pageContext: any
@@ -20,6 +22,7 @@ export default class Index extends React.Component<Prop, State> {
   }
 
   render() {
+    const Search = Input.Search
     const allSlide: Slide[] = this.props.pageContext.allSlide
 
     const slides: Slide[] =
@@ -32,12 +35,15 @@ export default class Index extends React.Component<Prop, State> {
         <Page>
           <Container>
             <SearchBox>
-              <input type="text" name="search" value={this.state.keyword} onChange={e => this.setState({ keyword: e.target.value })} />
+              <SearchLabel>スライド内容を検索</SearchLabel>
+              <Search size="large" placeholder="Search" onChange={e => this.setState({ keyword: e.target.value })} />
             </SearchBox>
 
-            {slides.map(slide => (
-              <SlideItem slide={slide} key={slide.fileId} />
-            ))}
+            <SlideWrapper>
+              {slides.map(slide => (
+                <SlideItem slide={slide} key={slide.fileId} />
+              ))}
+            </SlideWrapper>
           </Container>
         </Page>
       </IndexLayout>
@@ -45,4 +51,19 @@ export default class Index extends React.Component<Prop, State> {
   }
 }
 
-const SearchBox = styled.div``
+const SearchBox = styled.div`
+  margin: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+`
+
+const SearchLabel = styled.h2`
+  margin-bottom: 40px;
+  color: ${colors.text};
+  text-align: center;
+`
+
+const SlideWrapper = styled.div`
+  width: 100%;
+`

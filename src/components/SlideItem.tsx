@@ -25,7 +25,7 @@ export const SlideItem = (props: Props) => {
   return (
     <Wrapper>
       <Link to={`/${slide.fileId}/`}>
-        <SlideImg src={slide.imgUrl} alt="" width={250} />
+        <SlideImg src={slide.imgUrl} alt="" width={220} />
       </Link>
       <Details>
         <Link to={`/${slide.uploadUser.userId}/`}>

@@ -23,7 +23,7 @@ export const colors = {
 }
 
 export const fonts = {
-  Dosis: 'Dosis,sans-serif',
+  Dosis: 'Dosis,sans-serif,"M PLUS Rounded 1c"',
   sansSerif:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
   serif: 'Georgia, "Times New Roman", Times, serif',
