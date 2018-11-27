@@ -10,7 +10,7 @@ async function getAllSlideData() {
     `https://script.google.com/macros/s/AKfycbzzea8w5fE91z2yNCoNyoKd2F-c2hReVzb_gGrXEYH9lSL8LAqi/exec`
   )
 
-  return slides
+  return slides.reverse()
 }
 
 exports.onPreBootstrap = async () => {
