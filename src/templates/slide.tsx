@@ -27,4 +27,5 @@ export default (context: any) => {
 
 const KeyWordText = styled.p`
   word-wrap: break-word;
+  font-size: 16px;
 `
