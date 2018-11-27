@@ -79,4 +79,13 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slide }
     })
   })
+
+  Array.from(new Set(allSlide.map(slide => slide.uploadUser))).forEach(user => {
+    const slides = allSlide.filter(slide => slide.uploadUser.userId === user.userId)
+    createPage({
+      path: `/${user.userId}/`,
+      component: require.resolve('./src/templates/user.tsx'),
+      context: { user, slides }
+    })
+  })
 }

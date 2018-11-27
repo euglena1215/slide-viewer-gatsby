@@ -27,7 +27,9 @@ export const SlideItem = (props: Props) => {
         <SlideImg src={slide.imgUrl} alt="" width={250} />
       </Link>
       <Details>
-        <UserImg src={slide.uploadUser.imgUrl} />
+        <Link to={`/${slide.uploadUser.userId}/`}>
+          <UserImg src={slide.uploadUser.imgUrl} />
+        </Link>
         <DetailsText>
           <UserName>{slide.uploadUser.name}</UserName>
           <Published>XXXX/MM/DD</Published>
@@ -65,10 +67,15 @@ const UserName = styled.p`
 `
 
 const UserImg = styled.img`
+  transition-duration: 50ms;
   width: 50px;
   border-radius: 50%;
   box-shadow: 2px 2px 5px rgba(50, 50, 50, 0.3);
   margin-right: 10px;
+
+  :hover {
+    box-shadow: 4px 4px 6px rgba(50, 50, 50, 0.3);
+  }
 `
 
 const Wrapper = styled.div`
