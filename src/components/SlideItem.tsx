@@ -28,9 +28,11 @@ export const SlideItem = (props: Props) => {
         <SlideImg src={slide.imgUrl} alt="" width={220} />
       </Link>
       <Details>
-        <Link to={`/${slide.uploadUser.userId}/`}>
-          <UserImg src={slide.uploadUser.imgUrl} />
-        </Link>
+        <IconBox>
+          <Link to={`/${slide.uploadUser.userId}/`}>
+            <UserImg src={slide.uploadUser.imgUrl} />
+          </Link>
+        </IconBox>
         <DetailsText>
           <UserName>{slide.uploadUser.name}</UserName>
           <Published>{slide.timestamp.match(/\d{4}-\d{2}-\d{2}/)}</Published>
@@ -41,17 +43,19 @@ export const SlideItem = (props: Props) => {
 }
 
 const DetailsText = styled.div`
-  display: inline-block;
   margin: 2px;
 `
 
 const Details = styled.div`
-  margin: 10px;
+  margin: 15px;
+  display: flex;
 `
 
 const Published = styled.p`
   margin: 0;
 `
+
+const IconBox = styled.div``
 
 const SlideImg = styled.img`
   transition-duration: 100ms;
@@ -65,6 +69,7 @@ const SlideImg = styled.img`
 
 const UserName = styled.p`
   margin: 0;
+  font-size: 16px;
 `
 
 const UserImg = styled.img`
