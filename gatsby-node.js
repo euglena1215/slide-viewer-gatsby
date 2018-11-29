@@ -7,7 +7,7 @@ const https = require('https')
 
 async function getAllSlideData() {
   const { data: slides } = await axios.get(
-    `https://script.google.com/macros/s/AKfycbzzea8w5fE91z2yNCoNyoKd2F-c2hReVzb_gGrXEYH9lSL8LAqi/exec`
+    `https://script.google.com/macros/s/AKfycbyTHLaKfav7RM3HMBe0OTrlo76Lzc4oJKtOeFgoKbkjzaxjntY/exec`
   )
 
   return slides.reverse()
