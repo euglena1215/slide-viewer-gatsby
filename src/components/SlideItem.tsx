@@ -52,6 +52,8 @@ const DetailsText = styled.div`
 
 const Details = styled.div`
   margin: 15px;
+  margin-left: 10px;
+  margin-right: 5px;
   display: flex;
 `
 
@@ -73,6 +75,7 @@ const SlideImg = styled.img`
 
 const UserName = styled.p`
   margin: 0;
+  letter-spacing: 1px;
   font-size: 16px;
 `
 
