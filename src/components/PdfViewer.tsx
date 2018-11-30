@@ -1,6 +1,7 @@
 import React from 'react'
 import PDF from 'react-pdf-js'
 import styled from 'react-emotion'
+import { Spin } from 'antd'
 
 interface Prop {
   pdfUrl: string
@@ -10,13 +11,14 @@ interface Prop {
 interface State {
   pages: number
   page: number
+  loading: boolean
 }
 
 export default class PdfViewer extends React.Component<Prop, State> {
-  state = { page: 1, pages: -1 }
+  state = { page: 1, pages: -1, loading: true }
 
   onDocumentComplete = pages => {
-    this.setState({ pages, page: 1 })
+    this.setState({ pages, page: 1, loading: false })
   }
 
   handlePrevious = () => {
@@ -36,9 +38,11 @@ export default class PdfViewer extends React.Component<Prop, State> {
 
     return (
       <Wrapper>
-        <PDF file={pdfUrl} onDocumentComplete={this.onDocumentComplete} page={this.state.page} cMapUrl="/cmaps/" cMapPacked={true} />
-        <PreviousButton onClick={this.handlePrevious} />
-        <NextButton onClick={this.handleNext} />
+        <Spin spinning={this.state.loading} size="large" tip="Loading...">
+          <PDF file={pdfUrl} onDocumentComplete={this.onDocumentComplete} page={this.state.page} cMapUrl="/cmaps/" cMapPacked={true} />
+          <PreviousButton onClick={this.handlePrevious} />
+          <NextButton onClick={this.handleNext} />
+        </Spin>
       </Wrapper>
     )
   }
